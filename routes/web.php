@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('frontend.index');
 });
+Route::get('/kontak', function () {
+    return view('frontend.kontak');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

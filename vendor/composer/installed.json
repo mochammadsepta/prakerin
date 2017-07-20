@@ -3466,5 +3466,189 @@
             "testing",
             "xunit"
         ]
+    },
+    {
+        "name": "kkszymanowski/traitor",
+        "version": "0.2.3",
+        "version_normalized": "0.2.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/KKSzymanowski/Traitor.git",
+            "reference": "0f3ed8ca01f35d7576d3ad0a43e013825d738909"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/KKSzymanowski/Traitor/zipball/0f3ed8ca01f35d7576d3ad0a43e013825d738909",
+            "reference": "0f3ed8ca01f35d7576d3ad0a43e013825d738909",
+            "shasum": ""
+        },
+        "require": {
+            "nikic/php-parser": "^1.0|^2.0|^3.0",
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.1"
+        },
+        "time": "2016-12-18 21:34:36",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Traitor\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Kuba Szymanowski",
+                "email": "kuba.szymanowski@inf24.pl"
+            }
+        ],
+        "description": "Add a trait use statement to existing PHP class",
+        "keywords": [
+            "add",
+            "php",
+            "trait"
+        ]
+    },
+    {
+        "name": "santigarcor/laratrust",
+        "version": "3.0.13",
+        "version_normalized": "3.0.13.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/santigarcor/laratrust.git",
+            "reference": "77275c3aea94b23c48a060de88b4773026f1228e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/santigarcor/laratrust/zipball/77275c3aea94b23c48a060de88b4773026f1228e",
+            "reference": "77275c3aea94b23c48a060de88b4773026f1228e",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/cache": "~5.0",
+            "illuminate/console": "~5.0",
+            "illuminate/support": "~5.0",
+            "kkszymanowski/traitor": "^0.2.0",
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "illuminate/database": "~5.0",
+            "mockery/mockery": "~0.9",
+            "phpunit/phpunit": "~4.1",
+            "squizlabs/php_codesniffer": "2.*"
+        },
+        "time": "2017-02-10 19:19:34",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/commands"
+            ],
+            "psr-4": {
+                "Laratrust\\": "src/Laratrust/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Andrew Elkins",
+                "homepage": "http://andrewelkins.com"
+            },
+            {
+                "name": "Zizaco Zizuini",
+                "email": "zizaco@gmail.com"
+            },
+            {
+                "name": "Ben Batschelet",
+                "homepage": "http://github.com/bbatsche"
+            },
+            {
+                "name": "Michele Angioni",
+                "email": "michele.angioni@gmail.com"
+            },
+            {
+                "name": "Santiago Garcia",
+                "homepage": "http://santigarcor.me"
+            },
+            {
+                "name": "Mateo Calle",
+                "homepage": "https://github.com/Mathius17"
+            }
+        ],
+        "description": "This package provides a flexible way to add Role-based Permissions to Laravel",
+        "keywords": [
+            "acl",
+            "authorization",
+            "laratrust",
+            "laravel",
+            "permissions",
+            "php",
+            "rbac",
+            "roles"
+        ]
+    },
+    {
+        "name": "laravelcollective/html",
+        "version": "v5.4.8",
+        "version_normalized": "5.4.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/LaravelCollective/html.git",
+            "reference": "9b8f51e7a2368911c896f5d42757886bae0717b5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/LaravelCollective/html/zipball/9b8f51e7a2368911c896f5d42757886bae0717b5",
+            "reference": "9b8f51e7a2368911c896f5d42757886bae0717b5",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/http": "5.4.*",
+            "illuminate/routing": "5.4.*",
+            "illuminate/session": "5.4.*",
+            "illuminate/support": "5.4.*",
+            "illuminate/view": "5.4.*",
+            "php": ">=5.6.4"
+        },
+        "require-dev": {
+            "illuminate/database": "5.4.*",
+            "mockery/mockery": "~0.9.4",
+            "phpunit/phpunit": "~5.4"
+        },
+        "time": "2017-05-22 06:35:07",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Collective\\Html\\": "src/"
+            },
+            "files": [
+                "src/helpers.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylorotwell@gmail.com"
+            },
+            {
+                "name": "Adam Engebretson",
+                "email": "adam@laravelcollective.com"
+            }
+        ],
+        "description": "HTML and Form Builders for the Laravel Framework",
+        "homepage": "http://laravelcollective.com"
     }
 ]
