@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport"    content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author"      content="Sergey Pozhilov (GetTemplate.com)">
+    <meta name="author" content="">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Teknik Sepeda Motor</title>
+    <link rel="shortcut icon" href="{{ asset('assets/img/ass.png') }}">
 
-    <title>{{ config('app.name', 'SMK Assalaam') }}</title>
-    <link rel="shortcut icon" href="{{ asset('assets/images/gt.png') }}">
 
-    <link rel="stylesheet" href="{{ asset('table/css/jquery.dataTables.css') }}">
-    <link rel="stylesheet" href="{{ asset('table/css/dataTables.bootstrap.css') }}">
+    <!-- Bootstrap Core CSS -->
+    <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('css/selectize.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/selectize.bootstrap3.css') }}">
+    <!-- Theme CSS -->
+    <link href="/assets/css/freelancer.min.css" rel="stylesheet">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
+    <!-- Custom Fonts -->
+    <link href="/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <!-- Custom styles for our template -->
-    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap-theme.css') }}" media="screen" >
-    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    <script>
-        window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
-        ]); ?>
-    </script>
 </head>
 <body class="home">
     <div class="navbar navbar-inverse navbar-fixed-top headroom" >
@@ -42,70 +37,41 @@
             <div class="navbar-header">
                 <!-- Button for smallest screens -->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-                <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('assets/images/smk.png') }}" alt="Smk Assalaam"></a>
+                <div class="navbar-brand"><h5>SMKASSALAAMBANDUNG</h5></div>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav pull-right">
                     @role('admin')
                         <li><a href="{{ url('/home') }}">Beranda</a></li>
-                        <li><a href="{{ route('hak-akses.index') }}">Hak Akses</a></li>
-                        <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sekolah <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="">Profil Sekolah</a></li>
-                            <li><a href="">Kejuruan</a></li>
-                            <li><a href="">Fasilitas</a></li>
-                            <li><a href="">Ekstrakurikuler</a></li>
-                        </ul>
-                        </li>
-                        <li><a href="">Prestasi</a></li>
-                        <li><a href="{{ route('artikel.index') }}">Artikel</a></li>
-                        <li><a href="{{ url('akun/profile') }}">Akun</a></li>
-                        <li><a class="btn" href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >LOGOUT</a></li>
-                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
-                    @endrole
-                    @role('kejuruan')
-                        <li><a href="">Beranda</a></li>
                         <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kejuruan <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="">Rekayasa Perangkat Lunak</a></li>
-                            <li><a href="">Teknik Sepeda Motor</a></li>
-                            <li><a href="">Teknik Kendaraan Ringan</a></li>
+                            <li><a href="">Alumni</a></li>
+                            <li><a href="">Fasilitas</a></li>
+                            <li><a href="">Kurikulum</a></li>
+                            <li><a href="">Perusahaan</a></li>
                         </ul>
                         </li>
-                        <li><a href="">Akun</a></li>
-                        <li><a class="btn" href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >LOGOUT</a></li>
-                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
-                    @endrole
-                    @role('ekskul')
-                        <li><a href="">Beranda</a></li>
+                        <li><a href="">Prestasi</a></li>
                         <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ekstrakurikuler <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Akun <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="">Rekayasa Perangkat Lunak</a></li>
-                            <li><a href="">Teknik Sepeda Motor</a></li>
-                            <li><a href="">Teknik Kendaraan Ringan</a></li>
+                            <li><a href="{{ ('/akun/profile') }}">ubah password</a></li>
+                            <li><a class="btn" href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >logout</a></li>
                         </ul>
                         </li>
-                        <li><a href="{{ url('akun/profile') }}">Akun</a></li>
-                        <li><a class="btn" href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >LOGOUT</a></li>
                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form>
                     @endrole
                     @role('fasilitas')
-                        <li><a href="">Beranda</a></li>
+                        <li><a href="{{ url('/home') }}">Beranda</a></li>
                         <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fasilitas <b class="caret"></b></a>
                         <ul class="dropdown-menu">
+                            <li><a href="">Ruang Praktek</a></li>
                             <li><a href="">Gedung</a></li>
                             <li><a href="">Lingkungan</a></li>
-                            <li><a href="">Ruang Praktek</a></li>
                         </ul>
                         </li>
                         <li><a href="{{ url('akun/profile') }}">Akun</a></li>
@@ -114,10 +80,24 @@
                             {{ csrf_field() }}
                         </form>
                     @endrole
-                    @role('artikel')
-                        <li><a href="">Beranda</a></li>
-                        <li><a href="{{ route('artikel.index') }}">Berita</a></li>
+                    @role('prestasi')
+                        <li><a href="{{ ('/home') }}">Beranda</a></li>
+                        <li><a href="">Prestasi</a></li>
                         <li><a href="{{ url('akun/profile') }}">Akun</a></li>
+                        <li><a class="btn" href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >LOGOUT</a></li>
+                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    @endrole
+                    @role('alumni')
+                        <li><a href="{{ ('/home') }}">Beranda</a></li>
+                        <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Alumni <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="">2016</a></li>
+                            <li><a href="">2015</a></li>
+                        </ul>
+                        </li>
                         <li><a class="btn" href="{{ url('/logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >LOGOUT</a></li>
                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
@@ -128,13 +108,13 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sekolah <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{ url('/profil') }}">Profil Sekolah</a></li>
-                            <li><a href="{{ url('/kejuruan') }}">Kejuruan</a></li>
-                            <li><a href="{{ url('/fasilitas') }}">Fasilitas</a></li>
-                            <li><a href="{{ url('/ekstra') }}">Ekstrakurikuler</a></li>
+                            <li><a href="{{ url('/alumni') }}">Alumni</a></li>
+                            <li class="page-scroll"><a href="#portfolio">Fasilitas</a></li>
+                            <li class="page-scroll"><a href="#kurikulum">Kurikulum</a></li>
+                            <li><a href="{{ url('/prestasi') }}">Prestasi</a></li>
+                            <li><a href="{{ url('/perusahaan') }}">Perusahaan</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{ url('/berita') }}">Berita</a></li>
                     <li><a href="{{ url('/kontak') }}">Kontak</a></li>
                     @endif
                 </ul>
@@ -222,4 +202,3 @@
     @yield('scripts')
 </body>
 </html>
-Contact GitHub 

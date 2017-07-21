@@ -13,7 +13,7 @@ class UsersSeeder extends Seeder
     {
         //Role Admin Utama
         $adminRole = new Role();
-        $adminRole->name="Admin TSM";
+        $adminRole->name="admin";
         $adminRole->display_name="Admin";
         $adminRole->save();
         //Role Author Fasilitas
@@ -58,6 +58,6 @@ class UsersSeeder extends Seeder
         $alumni->email="alumni@gmail.com";
         $alumni->password=bcrypt('rahasia');
         $alumni->save();
-        $alumni->attachRole($adminRole);
+        $alumni->attachRole($alumniRole);
     }
 }
